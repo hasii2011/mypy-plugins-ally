@@ -1,0 +1,11 @@
+/shelf/
+/workspace.xml
+.idea/
+__pycache__/
+.DS_Store
+build/
+dist/
+/mypy-plugins-ally.egg-info/
+/pyenv-3.13.18/
+.python-version
+.envrc

@@ -1,0 +1,52 @@
+[build-system]
+requires = ['setuptools', 'wheel']
+build-backend = "setuptools.build_meta"
+
+[project]
+name = 'mypy-plugins-ally'
+dynamic = ["version"]
+description = 'Custom mypy plugins for wxPython and Ally projects'
+readme = "README.md"
+authors = [{name = 'Humberto A. Sanchez II', email = 'Humberto.A.Sanchez.II@gmail.com'}]
+maintainers = [{name = 'Humberto A. Sanchez II', email = 'Humberto.A.Sanchez.II@gmail.com'}]
+keywords = ['mypy', 'plugin', 'wxpython', 'typing', 'static-analysis']
+license = 'AGPL-1.0-or-later'
+license-files = ['LICENSE']
+requires-python = '>=3.11'
+
+classifiers = [
+    'Intended Audience :: Developers',
+    'Operating System :: MacOS :: MacOS X',
+    'Programming Language :: Python :: 3',
+    'Topic :: Software Development :: Quality Assurance',
+    'Typing :: Typed',
+]
+
+dependencies = [
+    'mypy>= 2.4.1',
+]
+
+[project.optional-dependencies]
+test = [
+    'html-testRunner~=1.2.1',
+    'mypy-extensions==1.1.0',
+]
+
+deploy = [
+    'wheel==0.48.0',
+    'setuptools==84.0.0',
+    'twine==7.0.0',
+    'build==1.6.1',
+]
+
+[project.urls]
+Repository = 'https://github.com/hasii2011/mypy-plugins-ally'
+
+[tool.setuptools.packages.find]
+where = ['src']
+
+[tool.setuptools.package-data]
+mypypluginsally = ['py.typed']
+
+[tool.setuptools.dynamic]
+version = {attr = 'mypypluginsally.__version__'}
